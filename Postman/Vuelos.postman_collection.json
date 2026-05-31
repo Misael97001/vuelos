@@ -1,0 +1,147 @@
+{
+  "info": {
+    "_postman_id": "7804ae9f-659f-4824-a304-3279289a0792",
+    "name": "Vuelos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52046897",
+    "_collection_link": "https://go.postman.co/collection/52046897-7804ae9f-659f-4824-a304-3279289a0792?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Crear vuelo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"codigo\":\"AA-501\",\r\n    \"precioBoleto\":450.50,\r\n    \"asientosDisponibles\":80\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vuelos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vuelos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "menor a 300",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/vuelos/precio?precio=300",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vuelos",
+            "precio"
+          ],
+          "query": [
+            {
+              "key": "precio",
+              "value": "300"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar vuelo",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar por id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/vuelos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vuelos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar vuelo",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"codigo\":\"AA-501\",\r\n    \"precioBoleto\":600.00,\r\n    \"asientosDisponibles\":70\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/vuelos/2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vuelos",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar vuelo",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/vuelos/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vuelos",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
