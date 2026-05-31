@@ -51,8 +51,7 @@ public class VueloController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> buscar(
-			@PathVariable Long id){
+	public ResponseEntity<?> buscar(@PathVariable Long id){
 
 		try {
 
@@ -85,12 +84,11 @@ public class VueloController {
 	}
 
 	@GetMapping("/asientos")
-	public ResponseEntity<?> buscarPorAsientos(	@RequestParam Integer asientos){
+	public ResponseEntity<?> buscarPorAsientos(@RequestParam Integer asientos){
 
 		try {
 
-			return ResponseEntity.ok(
-					servicio.buscarPorAsientos(asientos));
+			return ResponseEntity.ok(servicio.buscarPorAsientos(asientos));
 
 		}catch(Exception e) {
 

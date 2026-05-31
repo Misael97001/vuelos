@@ -28,15 +28,13 @@ public class ServicioVuelo {
 
 	public Vuelo buscarPorId(Long id) {
 
-		Optional<Vuelo> resultado =
-				repository.findById(id);
+		Optional<Vuelo> resultado =repository.findById(id);
 
 		return resultado.orElse(null);
 	}
 
 
-	public Vuelo actualizar(Long id,
-			Vuelo vueloActualizado) {
+	public Vuelo actualizar(Long id, Vuelo vueloActualizado) {
 
 		Vuelo vuelo = buscarPorId(id);
 
@@ -44,17 +42,13 @@ public class ServicioVuelo {
 			return null;
 		}
 
-		vuelo.setCodigo(
-				vueloActualizado.getCodigo());
+		vuelo.setCodigo(vueloActualizado.getCodigo());
 
-		vuelo.setPrecioBoleto(
-				vueloActualizado.getPrecioBoleto());
+		vuelo.setPrecioBoleto(vueloActualizado.getPrecioBoleto());
 
-		vuelo.setAsientosDisponibles(
-				vueloActualizado.getAsientosDisponibles());
+		vuelo.setAsientosDisponibles(vueloActualizado.getAsientosDisponibles());
 
-		vuelo.setDestino(
-				vueloActualizado.getDestino());
+		vuelo.setDestino(vueloActualizado.getDestino());
 
 		return repository.save(vuelo);
 	}
@@ -72,17 +66,13 @@ public class ServicioVuelo {
 		return true;
 	}
 
-	public List<Vuelo> buscarPorPrecio(
-			BigDecimal precio){
+	public List<Vuelo> buscarPorPrecio(BigDecimal precio){
 
-		return repository
-				.findByPrecioBoletoLessThan(precio);
+		return repository.findByPrecioBoletoLessThan(precio);
 	}
 
-	public List<Vuelo> buscarPorAsientos(
-			Integer asientos){
+	public List<Vuelo> buscarPorAsientos(Integer asientos){
 
-		return repository
-				.findByAsientosDisponiblesGreaterThan(asientos);
+		return repository.findByAsientosDisponiblesGreaterThan(asientos);
 	}
 }

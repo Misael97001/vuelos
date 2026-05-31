@@ -1,5 +1,8 @@
+# Cree carpeta para postman y para Posgtgres
+
 # PARTE 1 
 [Link video parte 1](https://photos.app.goo.gl/6uqKYYZSdX3it7Sq9 "videoParte1")
+
 
 # PARTE 2 
 
