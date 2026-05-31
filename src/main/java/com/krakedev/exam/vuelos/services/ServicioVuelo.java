@@ -34,6 +34,7 @@ public class ServicioVuelo {
 		return resultado.orElse(null);
 	}
 
+
 	public Vuelo actualizar(Long id,
 			Vuelo vueloActualizado) {
 
@@ -52,9 +53,12 @@ public class ServicioVuelo {
 		vuelo.setAsientosDisponibles(
 				vueloActualizado.getAsientosDisponibles());
 
+		vuelo.setDestino(
+				vueloActualizado.getDestino());
+
 		return repository.save(vuelo);
 	}
-
+	
 	public boolean eliminar(Long id) {
 
 		Vuelo vuelo = buscarPorId(id);

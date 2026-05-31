@@ -41,3 +41,34 @@ WHERE id = 1;
 
 DELETE FROM vuelos
 WHERE asientos_disponibles = 0;
+
+alter table vuelos
+add column destino varchar(100);
+
+
+update vuelos
+set destino = 'Madrid'
+where codigo = 'AA-101';
+
+update vuelos
+set destino = 'Bogota'
+where codigo = 'AA-102';
+
+update vuelos
+set destino = 'Lima'
+where codigo = 'AA-103';
+
+update vuelos
+set destino = 'Buenos Aires'
+where codigo = 'AA-104';
+
+update vuelos
+set destino = 'Santiago'
+where codigo = 'AA-105';
+
+
+select codigo,
+	   precio_boleto,
+	   asientos_disponibles,
+	   destino
+from vuelos;

@@ -20,6 +20,9 @@ public class Vuelo {
 	@Column(nullable = false, unique = true, length = 10)
 	private String codigo;
 
+	@Column(length = 100)
+	private String destino;
+	
 	@Column(name = "precio_boleto",
 			nullable = false,
 			precision = 10,
@@ -36,13 +39,22 @@ public class Vuelo {
 
 	public Vuelo(String codigo,
 			BigDecimal precioBoleto,
-			Integer asientosDisponibles) {
+			Integer asientosDisponibles,
+			String destino) {
 
 		this.codigo = codigo;
 		this.precioBoleto = precioBoleto;
 		this.asientosDisponibles = asientosDisponibles;
+		this.destino = destino;
 	}
-
+	
+	public String getDestino() {
+		return destino;
+	}
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+	
 	public Long getId() {
 		return id;
 	}
